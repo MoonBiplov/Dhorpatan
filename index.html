@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dhorpatan Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"><img src="1.jpeg" alt=""></div>
+            <div class="item" style="--position: 2"><img src="2.jpeg" alt=""></div>
+            <div class="item" style="--position: 3"><img src="3.jpeg" alt=""></div>
+            <div class="item" style="--position: 4"><img src="4.jpeg" alt=""></div>
+            <div class="item" style="--position: 5"><img src="5.jpeg" alt=""></div>
+            <div class="item" style="--position: 6"><img src="6.jpeg" alt=""></div>
+            <div class="item" style="--position: 7"><img src="7.jpeg" alt=""></div>
+            <div class="item" style="--position: 8"><img src="8.jpeg" alt=""></div>
+            <div class="item" style="--position: 9"><img src="9.jpeg" alt=""></div>
+            <div class="item" style="--position: 10"><img src="10.jpeg" alt=""></div>
+        </div>
+
+        <div class="content">
+            <h1 data-content="MoonBiplov">MoonBiplov</h1>
+            <div class="author">
+                <colgroup blue ></colgroup>
+                <h2>MoonBiplov</h2>
+                <p><b>Dhorpatan Gallery!</b></p>
+                <p>Some memories of Dhorpatan,UttarGanga! #MamaVanja</p>
+            </div>
+            <div class="model"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImg">
+</div>
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.getElementById("closeModal");
+
+        document.querySelectorAll('.slider .item img').forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = "flex";
+                modalImg.src = img.src;
+            });
+        });
+
+        closeBtn.onclick = () => {
+            modal.style.display = "none";
+        };
+    </script>
+
+</body>
+</html>
